@@ -16,3 +16,11 @@ It includes scripts for data preprocessing, feature extraction, machine learning
 
 ## 📁 Repository Structure
 
+ctcf-looping-analysis/
+├── data/ # Input or reference datasets
+├── src/ # Core Python scripts
+├── notebooks/ # Jupyter notebooks for analysis & figures
+├── results/ # Output plots and data
+├── requirements.txt # Dependencies
+├── LICENSE # License information
+└── README.md # Documentation
