@@ -76,6 +76,15 @@ matplotlib
 ```
 
 ---
+📊 Input Data
+
+This project uses several large datasets (ChIA-PET, ChIP-Seq, RPKM, and conservation data).
+Because these files are large, they are not included in the repository.
+
+Please download them manually from the following link(s):
+
+🔗 https://drive.google.com/drive/folders/1qoFvcR3oNQdQ6UgsIXYOrKjXebxs6CQK?usp=drive_link
+
 
 ## 🚀 Usage
 
