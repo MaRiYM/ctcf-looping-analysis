@@ -11,6 +11,8 @@ This repository contains the code and analysis used in the paper:
 
 This project explores how neighboring chromatin interactions influence CTCF-mediated loop formation using computational modeling and data analysis.  
 It includes scripts for data preprocessing, feature extraction, machine learning analysis, and visualization of chromatin looping patterns.
+This repository contains **two machine learning pipelines** for predicting CTCF-mediated chromatin interactions:
+
 
 The pipeline performs the following steps:
 
@@ -19,22 +21,6 @@ The pipeline performs the following steps:
 3. **Neighboring Feature Computation** – Aggregates features from neighboring genomic regions.  
 4. **Model Training & Evaluation** – Trains a Gradient Boosting model and evaluates on a held-out test cell line.  
 5. **Visualization** – Displays the confusion matrix and model performance metrics.
-
----
-
-## 🗂️ Project Structure
-
-```
-project/
-│
-├── main.py                        # Main pipeline script
-├── data_preparation.py             # Prepares interaction data
-├── train_test_features.py          # Splits data by cell line
-├── features_enginearing.py         # Adds chromatin and conservation features
-├── neighboring_features.py         # Computes neighboring chromatin features
-├── requirements.txt                # Dependencies list
-└── README.md                       # Project documentation
-```
 
 ---
 
@@ -88,22 +74,34 @@ Please download them manually from the following link(s):
 
 ## 🚀 Usage
 
-Run the pipeline from the command line:
+Run **one** of the two available models from the command line.  
+Replace `PATH` with the actual folder locations (relative or absolute).
+1. 2step_model.py` – computed neighboring features
 
 ```bash
-python main.py ^
-  --motif_chromatin_features "PATH" ^
-  --intersect_chiapet "PATH" ^
-  --intersect_chipseq "PATH" ^
-  --rpkm_features "PATH" ^
-  --rpkm_intervals "PATH" ^
-  --intersect_motif_chia "PATH" ^
-  --ctcf_motifs "PATH" ^
-  --cell_lines "GM ,H1, HCT116, HepG2, IMR90, K562, MCF7, SKNSH" ^
-  --test_cell_line "HCT116" ^
+python 2step_model.py \
+  --motif_chromatin     "data/motif_chromatin path" \
+  --intersect_chiapet   "data/chiapet_intersect path" \
+  --intersect_chipseq   "data/chipseq_intersect path" \
+  --rpkm_features       "data/rpkm_features path" \
+  --rpkm_intervals      "data/rpkm_intervals path" \
+  --intersect_motif_chia "data/motif_chia_intersect path" \
+  --ctcf_motifs         "data/ctcf_motifs path" \
+  --cell_lines "GM H1 HCT116 HepG2 IMR90 K562 MCF7 SKNSH" \
+  --test_cell HCT116
+
+Group-Specific_model.py – Data-driven neighboring features
+python Group-Specific_model.py \
+  --motif_chromatin_features "data/motif_chromatin_features path" \
+  --intersect_chiapet        "data/chiapet_intersect path" \
+  --intersect_chipseq        "data/chipseq_intersect path" \
+  --rpkm_features            "data/rpkm_features path" \
+  --rpkm_intervals           "data/rpkm_intervals path" \
+  --intersect_motif_chia     "data/motif_chia_intersect path" \
+  --ctcf_motifs              "data/ctcf_motifs path" \
+  --cell_lines "GM,H1,HCT116,HepG2,IMR90,K562,MCF7,SKNSH" \
+  --test_cell_line "HCT116" \
   --features_group 3
-```
----
 
 ## 📊 Output
 
