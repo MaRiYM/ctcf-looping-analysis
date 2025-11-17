@@ -76,7 +76,7 @@ Please download them manually from the following link(s):
 
 Run **one** of the two available models from the command line.  
 Replace `PATH` with the actual folder locations (relative or absolute).
-  ###1. 2step_model.py` – computed neighboring features
+  1. 2step_model.py` – computed neighboring features
 
   ```bash
   python 2step_model.py \
@@ -90,7 +90,7 @@ Replace `PATH` with the actual folder locations (relative or absolute).
   --cell_lines "GM H1 HCT116 HepG2 IMR90 K562 MCF7 SKNSH" \
   --test_cell HCT116
 
-  ###2. Group-Specific_model.py – Data-driven neighboring features
+  2. Group-Specific_model.py – Data-driven neighboring features
   ```bash
   python Group-Specific_model.py \
   --motif_chromatin_features "data/motif_chromatin_features path" \
@@ -104,6 +104,7 @@ Replace `PATH` with the actual folder locations (relative or absolute).
   --test_cell_line "HCT116" \
   --features_group 3
 
+---
 ## 📊 Output
 
 - Prints progress of each data preparation and feature engineering step  
