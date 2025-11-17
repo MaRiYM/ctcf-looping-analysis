@@ -89,6 +89,7 @@ Replace `PATH` with the actual folder locations (relative or absolute).
   --ctcf_motifs         "data/ctcf_motifs path" \
   --cell_lines "GM H1 HCT116 HepG2 IMR90 K562 MCF7 SKNSH" \
   --test_cell HCT116
+  ```
 
   2. Group-Specific_model.py – Data-driven neighboring features
   ```bash
@@ -103,8 +104,12 @@ Replace `PATH` with the actual folder locations (relative or absolute).
   --cell_lines "GM,H1,HCT116,HepG2,IMR90,K562,MCF7,SKNSH" \
   --test_cell_line "HCT116" \
   --features_group 3
+  ```
 
 ---
+
+
+
 ## 📊 Output
 
 - Prints progress of each data preparation and feature engineering step  
