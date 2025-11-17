@@ -76,10 +76,10 @@ Please download them manually from the following link(s):
 
 Run **one** of the two available models from the command line.  
 Replace `PATH` with the actual folder locations (relative or absolute).
-###1. 2step_model.py` – computed neighboring features
+  ###1. 2step_model.py` – computed neighboring features
 
-```bash
-python 2step_model.py \
+  ```bash
+  python 2step_model.py \
   --motif_chromatin     "data/motif_chromatin path" \
   --intersect_chiapet   "data/chiapet_intersect path" \
   --intersect_chipseq   "data/chipseq_intersect path" \
@@ -90,8 +90,9 @@ python 2step_model.py \
   --cell_lines "GM H1 HCT116 HepG2 IMR90 K562 MCF7 SKNSH" \
   --test_cell HCT116
 
-###2. Group-Specific_model.py – Data-driven neighboring features
-python Group-Specific_model.py \
+  ###2. Group-Specific_model.py – Data-driven neighboring features
+  ```bash
+  python Group-Specific_model.py \
   --motif_chromatin_features "data/motif_chromatin_features path" \
   --intersect_chiapet        "data/chiapet_intersect path" \
   --intersect_chipseq        "data/chipseq_intersect path" \
