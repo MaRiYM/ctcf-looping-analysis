@@ -91,16 +91,16 @@ Please download them manually from the following link(s):
 Run the pipeline from the command line:
 
 ```bash
-python main.py \
-  --motif_chromatin_features "PATH" \
-  --intersect_chiapet "PATH" \
-  --intersect_chipseq "PATH" \
-  --rpkm_features "PATH" \
-  --rpkm_intervals "PATH" \
-  --intersect_motif_chia "PATH" \
-  --ctcf_motifs "PATH" \
-  --cell_lines "GM ,H1, HCT116, HepG2, IMR90, K562, MCF7, SKNSH" \
-  --test_cell_line "HCT116" \
+python main.py ^
+  --motif_chromatin_features "PATH" ^
+  --intersect_chiapet "PATH" ^
+  --intersect_chipseq "PATH" ^
+  --rpkm_features "PATH" ^
+  --rpkm_intervals "PATH" ^
+  --intersect_motif_chia "PATH" ^
+  --ctcf_motifs "PATH" ^
+  --cell_lines "GM ,H1, HCT116, HepG2, IMR90, K562, MCF7, SKNSH" ^
+  --test_cell_line "HCT116" ^
   --features_group 3
 ```
 ---
