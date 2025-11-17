@@ -130,12 +130,12 @@ Step 4: Merging conservation features...
 
 | Parameter | Description | Example |
 |------------|-------------|----------|
-| `--motif_chromatin_features` | Path to motif chromatin features directory | `"D:/.../Motifs1000"` |
-| `--intersect_chiapet` | Directory with ChIA-PET motif intersections | `"D:/.../with_dup"` |
-| `--intersect_chipseq` | Directory with ChIP-Seq motif intersections | `"D:/.../CTCF_Motifs"` |
+| `--motif_chromatin_features` | Path to motif chromatin features directory | `"D:/.../motif_chromatin_features"` |
+| `--intersect_chiapet` | Directory with ChIA-PET motif intersections | `"D:/.../intersect_chiapet"` |
+| `--intersect_chipseq` | Directory with ChIP-Seq motif intersections | `"D:/.../intersect_chipseq"` |
 | `--rpkm_features` | Path to RPKM feature outputs | `"D:/.../rpkm_output"` |
-| `--rpkm_intervals` | Path to RPKM intervals | `"D:/.../features/features"` |
-| `--intersect_motif_chia` | Path to overlaps between motif and ChIA-PET | `"D:/.../overlaps1000max"` |
+| `--rpkm_intervals` | Path to RPKM intervals | `"D:/.../features/rpkm_intervals"` |
+| `--intersect_motif_chia` | Path to overlaps between motif and ChIA-PET | `"D:/.../intersect_motif_chia"` |
 | `--ctcf_motifs` | Path to CTCF motif file | `"D:/.../CTCF_Motifs"` |
 | `--cell_lines` | List of cell lines used in training | `"GM,H1,HCT116,HepG2"` |
 | `--test_cell_line` | Cell line used for testing | `"HCT116"` |
