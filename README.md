@@ -87,7 +87,7 @@ Replace `PATH` with the actual folder locations (relative or absolute).
   --rpkm_features       "data/rpkm_features path" \
   --rpkm_intervals      "data/rpkm_intervals path" \
   --intersect_motif_chia "data/motif_chia_intersect path" \
-  --ctcf_motifs         "data/ctcf_motifs path" \
+  --ctcf_motifs         "data/motif_chromatin path" \
   --cell_lines "GM H1 HCT116 HepG2 IMR90 K562 MCF7 SKNSH" \
   --test_cell HCT116
   ```
@@ -102,7 +102,7 @@ Replace `PATH` with the actual folder locations (relative or absolute).
   --rpkm_features            "data/rpkm_features path" \
   --rpkm_intervals           "data/rpkm_intervals path" \
   --intersect_motif_chia     "data/motif_chia_intersect path" \
-  --ctcf_motifs              "data/ctcf_motifs path" \
+  --ctcf_motifs              "data/motif_chromatin_features path" \
   --cell_lines "GM,H1,HCT116,HepG2,IMR90,K562,MCF7,SKNSH" \
   --test_cell_line "HCT116" \
   --features_group 3
