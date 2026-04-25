@@ -172,7 +172,7 @@ def data_neighboring_features(X_test: pd.DataFrame, neighboring_features_group: 
     """
     Generate neighboring interaction features for data-driven (experimental) data.
     """
-    neighboring_group_loops = X_test.query('all_int_cell + label == @neighboring_features_group')
+    neighboring_group_loops = X_test.query('all_int_cell != @neighboring_features_group')
 
     # Extract unique nodes
     node_pair1 = X_test[["sequence_name", "start1", "stop1"]].drop_duplicates()
