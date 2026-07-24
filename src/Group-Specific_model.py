@@ -10,13 +10,13 @@ neighbouring features removed.
 
 Usage:
     python run_pipeline.py \
-        --chia-pet-dir /path/to/chiapet \
-        --chipseq-dir /path/to/chipseq \
-        --chromatin-dir /path/to/chromatin \
-        --rpkm-features-dir /path/to/rpkm_features \
-        --rpkm-intervals-dir /path/to/rpkm_intervals \
-        --intersect-motif-chia-dir /path/to/intersect_motif_chia \
-        --ctcf-motifs-dir /path/to/ctcf_motifs \
+        --chia-pet-dir /path/to/INTERSECT_CHIAPET \
+        --chipseq-dir /path/to/INTERSECT_CHIPSEQ \
+        --chromatin-dir /path/to/MOTIF_CHROMATIN_FEATURES \
+        --rpkm-features-dir /path/to/RPKM_FEATURES \
+        --rpkm-intervals-dir /path/to/RPKM_INTERVALS \
+        --intersect-motif-chia-dir /path/to/INTERSECT_MOTIF_CHIA \
+        --ctcf-motifs-dir /path/to/CTCF_MOTIFS \
         --test-cell-line GM \
         --cell-lines GM H1 HCT116 HepG2 IMR90 K562 MCF7 SKNSH \
         --chromatin-features H3K4me1 H3K4me2 H3K4me3 H3K9me3 RAD21 CTCF H3K36me3 H3K79me2 H3K27ac H3K9ac H3K27me3 H2AFZ H4K20me1 \
@@ -694,13 +694,13 @@ def aggregate_feature_importance_across_groups(feature_groups, output_dir, prefi
 
 def main():
     parser = argparse.ArgumentParser(description="Train group-specific chromatin interaction models.")
-    parser.add_argument('--chia-pet-dir', required=True, help="Directory with ChIA-PET interaction files")
-    parser.add_argument('--chipseq-dir', required=True, help="Directory with ChIP-seq peak files")
-    parser.add_argument('--chromatin-dir', required=True, help="Directory with chromatin feature files")
-    parser.add_argument('--rpkm-features-dir', required=True, help="Directory with RPKM features")
-    parser.add_argument('--rpkm-intervals-dir', required=True, help="Directory with RPKM intervals")
-    parser.add_argument('--intersect-motif-chia-dir', required=True, help="Directory with motif-ChIA intersection")
-    parser.add_argument('--ctcf-motifs-dir', required=True, help="Directory with CTCF motif files")
+    parser.add_argument('--chia-pet-dir', required=True, help="Directory with INTERSECT_CHIAPET folder")
+    parser.add_argument('--chipseq-dir', required=True, help="Directory with INTERSECT_CHIPSEQ folder")
+    parser.add_argument('--chromatin-dir', required=True, help="Directory with MOTIF_CHROMATIN_FEATURES folder")
+    parser.add_argument('--rpkm-features-dir', required=True, help="Directory with RPKM_FEATURES folder")
+    parser.add_argument('--rpkm-intervals-dir', required=True, help="Directory with RPKM_INTERVALS folder")
+    parser.add_argument('--intersect-motif-chia-dir', required=True, help="Directory with INTERSECT_MOTIF_CHIA folder")
+    parser.add_argument('--ctcf-motifs-dir', required=True, help="Directory with CTCF_MOTIFS folder")
     parser.add_argument('--test-cell-line', default='GM', help="Cell line to use as test (default: GM)")
     parser.add_argument('--cell-lines', nargs='+',
                         default=['GM', 'H1', 'HCT116', 'HepG2', 'IMR90', 'K562', 'MCF7', 'SKNSH'],
