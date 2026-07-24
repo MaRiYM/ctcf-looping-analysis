@@ -80,16 +80,17 @@ Replace `PATH` with the actual folder locations (relative or absolute).
 ### 1. 2step_model.py – computed neighboring features
 
   ```bash
-  python 2step_model.py \
-  --motif_chromatin     "data/motif_chromatin path" \
-  --intersect_chiapet   "data/chiapet_intersect path" \
-  --intersect_chipseq   "data/chipseq_intersect path" \
-  --rpkm_features       "data/rpkm_features path" \
-  --rpkm_intervals      "data/rpkm_intervals path" \
-  --intersect_motif_chia "data/motif_chia_intersect path" \
-  --ctcf_motifs         "data/motif_chromatin path" \
-  --cell_lines "GM H1 HCT116 HepG2 IMR90 K562 MCF7 SKNSH" \
-  --test_cell HCT116
+python two_step_pipeline.py \
+    --chia-pet-dir ./data/intersect_chiapet \
+    --chipseq-dir ./data/intersect_chipseq \
+    --chromatin-dir ./data/motif_chromatin_features \
+    --rpkm-features-dir ./data/rpkm_features \
+    --rpkm-intervals-dir ./data/rpkm_intervals \
+    --intersect-motif-chia-dir ./data/intersect_motif_chia \
+    --ctcf-motifs-dir ./data/ctcf_motifs \
+    --test-cell-line K562 \
+    --cell-lines GM H1 HCT116 HepG2 IMR90 K562 MCF7 SKNSH \
+    --output-dir ./my_results
   ```
 
 ### 2. Group-Specific_model.py – Data-driven neighboring features
@@ -117,6 +118,7 @@ python run_pipeline.py \
 
 ## 📊 Output
 
+
 ./grouping/                                 # Full-feature model results
 │   ├── feature_importance_3.csv            # Per-feature importance scores
 │   ├── feature_importance_plot_3.png       # Top-20 feature importance bar chart
@@ -130,6 +132,8 @@ python run_pipeline.py \
 │   └── grouping_HCT116_3.csv
 │
 ./grouping/aggregated_feature_importance.csv # (If multiple groups are run) Average importance across groups
+
+
 ## ⚗️ Parameters
 
 | Parameter | Description | Example |
