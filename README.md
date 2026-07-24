@@ -95,17 +95,20 @@ Replace `PATH` with the actual folder locations (relative or absolute).
 ### 2. Group-Specific_model.py – Data-driven neighboring features
   
   ```bash
-  python Group-Specific_model.py \
-  --motif_chromatin_features "data/motif_chromatin_features path" \
-  --intersect_chiapet        "data/chiapet_intersect path" \
-  --intersect_chipseq        "data/chipseq_intersect path" \
-  --rpkm_features            "data/rpkm_features path" \
-  --rpkm_intervals           "data/rpkm_intervals path" \
-  --intersect_motif_chia     "data/motif_chia_intersect path" \
-  --ctcf_motifs              "data/motif_chromatin_features path" \
-  --cell_lines "GM,H1,HCT116,HepG2,IMR90,K562,MCF7,SKNSH" \
-  --test_cell_line "HCT116" \
-  --features_group 3
+python run_pipeline.py \
+    --chia-pet-dir /path/to/intersect_chiapet \
+    --chipseq-dir /path/to/intersect_chipseq \
+    --chromatin-dir /path/to/motif_chromatin_features \
+    --rpkm-features-dir /path/to/rpkm_features \
+    --rpkm-intervals-dir /path/to/rpkm_intervals \
+    --intersect-motif-chia-dir /path/to/intersect_motif_chia \
+    --ctcf-motifs-dir /path/to/ctcf_motifs \
+    --test-cell-line GM \
+    --cell-lines GM H1 HCT116 HepG2 IMR90 K562 MCF7 SKNSH \
+    --chromatin-features H3K4me1 H3K4me2 H3K4me3 H3K9me3 RAD21 CTCF H3K36me3 H3K79me2 H3K27ac H3K9ac H3K27me3 H2AFZ H4K20me1 \
+    --feature-groups 1 2 3 4 5 \
+    --output-dir ./results \
+    --log-level INFO
   ```
 
 ---
@@ -114,25 +117,19 @@ Replace `PATH` with the actual folder locations (relative or absolute).
 
 ## 📊 Output
 
-- Prints progress of each data preparation and feature engineering step  
-- Displays **model accuracy** and **confusion matrix**
-- Produces:
-  - `train_neighboring_df` → Neighboring features for training data  
-  - `test_neighboring_df` → Neighboring features for test data  
-  - `test_confidence_df` → Test predictions with probabilities  
-
-Example log:
-```
-Step 1: Preparing motif interaction data...
-Step 2: Adding interaction distance and strand features...
-Step 3: Compiling chromatin features...
-Step 4: Merging conservation features...
-✅ Feature preparation complete.
-✅ Accuracy: 0.8732
-```
-
----
-
+./grouping/                                 # Full-feature model results
+│   ├── feature_importance_3.csv            # Per-feature importance scores
+│   ├── feature_importance_plot_3.png       # Top-20 feature importance bar chart
+│   ├── cumulative_importance_3.png         # Cumulative importance curve
+│   └── grouping_HCT116_3.csv               # Test set predictions + probabilities
+│
+./grouping0/                                # Ablated model (neighbouring features dropped)
+│   ├── feature_importance_3.csv
+│   ├── feature_importance_plot_3.png
+│   ├── cumulative_importance_3.png
+│   └── grouping_HCT116_3.csv
+│
+./grouping/aggregated_feature_importance.csv # (If multiple groups are run) Average importance across groups
 ## ⚗️ Parameters
 
 | Parameter | Description | Example |
