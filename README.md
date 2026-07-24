@@ -119,25 +119,25 @@ python run_pipeline.py \
 ## 📊 Output
 The script creates the following files and directories under the specified --output-dir:
 
-./results/
-│
-├── all_features/                         # Full‑feature model results
-│   ├── feature_importance_1.csv          # Per‑feature importance scores for group 1
-│   ├── feature_importance_plot_1.png     # Top‑20 feature importance bar chart
-│   ├── cumulative_importance_1.png       # Cumulative importance curve
-│   ├── grouping_GM_1.csv                 # Test set predictions + probabilities
-│   ├── ...                               # (similar files for each group processed)
-│   ├── aggregated_feature_importance_all.csv   # Average importance across groups
-│   └── aggregated_importance_plot_all.png     # Top‑20 average importance plot
-│
-└── dropped_neighbour/                    # Ablated model (neighbouring features removed)
-    ├── feature_importance_1.csv
-    ├── feature_importance_plot_1.png
-    ├── cumulative_importance_1.png
-    ├── grouping_GM_1.csv
-    ├── ...
-    ├── aggregated_feature_importance_dropped.csv
-    └── aggregated_importance_plot_dropped.png
+    ./results/
+    │
+    ├── all_features/                         # Full‑feature model results
+    │   ├── feature_importance_1.csv          # Per‑feature importance scores for group 1
+    │   ├── feature_importance_plot_1.png     # Top‑20 feature importance bar chart
+    │   ├── cumulative_importance_1.png       # Cumulative importance curve
+    │   ├── grouping_GM_1.csv                 # Test set predictions + probabilities
+    │   ├── ...                               # (similar files for each group processed)
+    │   ├── aggregated_feature_importance_all.csv   # Average importance across groups
+    │   └── aggregated_importance_plot_all.png     # Top‑20 average importance plot
+    │
+    └── dropped_neighbour/                    # Ablated model (neighbouring features removed)
+        ├── feature_importance_1.csv
+        ├── feature_importance_plot_1.png
+        ├── cumulative_importance_1.png
+        ├── grouping_GM_1.csv
+        ├── ...
+        ├── aggregated_feature_importance_dropped.csv
+        └── aggregated_importance_plot_dropped.png
 
 ## ⚗️ Parameters
 
